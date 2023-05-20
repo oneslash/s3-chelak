@@ -5,7 +5,7 @@ use std::time::SystemTime;
 /// Coverts quickly from SystemTime to RFC3339 format
 pub fn get_timestamp(sys_time: SystemTime) -> String {
     let datetime = DateTime::<Utc>::from(sys_time);
-    datetime.to_rfc3339()
+    datetime.to_rfc3339_opts(chrono::SecondsFormat::Secs, true)
 }
 
 /// Validate location constraint
@@ -38,6 +38,6 @@ pub fn validate_location_constraint(location_constraint: &str) -> bool {
         "us-gov-east-1",
         "us-gov-west-1",
     ];
-    
+
     locations.contains(&location_constraint)
 }
