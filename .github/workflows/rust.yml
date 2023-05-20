@@ -18,14 +18,14 @@ jobs:
       - uses: actions/checkout@v3
       - name: Build
         run: cargo build --verbose
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: test-1111
-          aws-secret-access-key: test-2222
-          aws-region: us-east-2
       - name: Run tests
         run: |
+          mkdir ~/.aws/
+          echo "[default]" >> ~/.aws/credentials
+          echo "aws_access_key_id = test" >> ~/.aws/credentials
+          echo "aws_secret_access_key = test" >> ~/.aws/credentials
+          echo "[default]" >> ~/.aws/config
+          echo "region = us-east-1" >> ~/.aws/config
           sudo apt-get install -y awscli
           cargo test --verbose
           RUNNER_TRACKING_ID="" && (nohup cargo run --verbose -- --working-folder /tmp/&)
