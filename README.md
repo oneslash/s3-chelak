@@ -1,5 +1,7 @@
 # 🪣 S3 Chelak
 
+[![Rust](https://github.com/oneslash/s3-chelak/actions/workflows/rust.yml/badge.svg)](https://github.com/oneslash/s3-chelak/actions/workflows/rust.yml)
+
 ## Description
 
 **S3 Chelak** is a local development tool that emulates the AWS S3 API's interface. This allows you to test your S3 integrations without connecting to AWS, which is useful for offline development and testing. It's designed to behave as much as possible like AWS S3, with the ability to store and retrieve objects, among other functions.

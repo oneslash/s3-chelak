@@ -18,6 +18,12 @@ jobs:
       - uses: actions/checkout@v3
       - name: Build
         run: cargo build --verbose
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: test-1111
+          aws-secret-access-key: test-2222
+          aws-region: us-east-2
       - name: Run tests
         run: |
           sudo apt-get install -y awscli
