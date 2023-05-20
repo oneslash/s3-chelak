@@ -33,7 +33,7 @@ Parameters:
 - `working_folder` (Default: `"/tmp/s3-server"`): This is the directory where the server will store all the data. If you wish to have the data stored in a different location, you can modify this value.
 
 ```bash
-$ ./s3-chelak --server_url "my_custom_url" --server_port "8080" --working_folder "/path/to/my/folder"
+$ ./s3-chelak --server-url "my_custom_url" --server-port "8080" --working-folder "/path/to/my/folder"
 ```
 
 ## API's implemented
