@@ -43,7 +43,7 @@ $ ./s3-chelak --server_url "my_custom_url" --server_port "8080" --working_folder
 | AbortMultipartUpload                        |        :x:         |
 | CompleteMultipartUpload                     |        :x:         |
 | CopyObject                                  |        :x:         |
-| CreateBucket                                |        :x:         |
+| CreateBucket                                | :white_check_mark: |
 | CreateMultipartUpload                       |        :x:         |
 | DeleteBucket                                |        :x:         |
 | DeleteBucketAnalyticsConfiguration          |        :x:         |
