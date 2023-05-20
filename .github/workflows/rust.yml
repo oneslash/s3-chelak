@@ -32,4 +32,5 @@ jobs:
           sleep 10
           aws --endpoint-url http://localhost:9090 s3 mb s3://sardo
           aws --endpoint-url http://localhost:9090 s3 ls
+          aws --endpoint-url http://localhost:9090 s3 cp ./Cargo.toml s3://sardo
         
