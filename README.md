@@ -113,6 +113,30 @@ $ ./s3-chelak --server_url "my_custom_url" --server_port "8080" --working_folder
 | PutBucketInventoryConfiguration             |        :x:         |
 | PutBucketLifecycle                          |        :x:         |
 | PutBucketLifecycleConfiguration             |        :x:         |
+| PutBucketLifecycleConfiguration             |        :x:         |
+| PutBucketLogging                            |        :x:         |
+| PutBucketMetricsConfiguration               |        :x:         |
+| PutBucketNotification                       |        :x:         |
+| PutBucketNotificationConfiguration          |        :x:         |
+| PutBucketOwnershipControls                  |        :x:         |
+| PutBucketPolicy                             |        :x:         |
+| PutBucketReplication                        |        :x:         |
+| PutBucketRequestPayment                     |        :x:         |
+| PutBucketTagging                            |        :x:         |
+| PutBucketVersioning                         |        :x:         |
+| PutBucketWebsite                            |        :x:         |
+| PutObject                                   |        :x:         |
+| PutObjectAcl                                |        :x:         |
+| PutObjectLegalHold                          |        :x:         |
+| PutObjectLockConfiguration                  |        :x:         |
+| PutObjectRetention                          |        :x:         |
+| PutObjectTagging                            |        :x:         |
+| PutPublicAccessBlock                        |        :x:         |
+| RestoreObject                               |        :x:         |
+| SelectObjectContent                         |        :x:         |
+| UploadPart                                  |        :x:         |
+| UploadPartCopy                              |        :x:         |
+| WriteGetObjectResponse                      |        :x:         |
 
 ## License
 
