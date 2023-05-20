@@ -15,8 +15,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Build
-      run: cargo build --verbose
-    - name: Run tests
-      run: cargo test --verbose
+      - uses: actions/checkout@v3
+      - name: Build
+        run: cargo build --verbose
+      - name: Run tests
+        run: |
+          apt-get install -y awscli
+          cargo test --verbose
+          cargo run --verbose /dev/null 2>&1 &
+          sleep 10
+          aws --endpoint-url http://localhost:9090 s3 mb s3://sardo
+          aws --endpoint-url http://localhost:9090 s3 ls
+        
