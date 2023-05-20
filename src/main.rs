@@ -2,11 +2,16 @@ use std::fs;
 
 use actix_web::{middleware, web, App, HttpRequest, HttpResponse, HttpServer, Responder};
 use clap::Parser;
+use tracing::error;
+use tracing::log::warn;
 
 pub mod apis;
 pub mod utils;
 
 async fn not_found(request: HttpRequest) -> impl Responder {
+    error!("Headers {:?}.", request.headers());
+    warn!("Cannot find {}.", request.path());
+    error!("Request Body {:?}.", request);
     HttpResponse::NotFound().body(format!("Cannot find {}.", request.path()))
 }
 
@@ -38,12 +43,14 @@ async fn main() -> std::io::Result<()> {
     let server = HttpServer::new(move || {
         App::new()
             .wrap(middleware::Logger::default())
-            .service(apis::create_bucket::create_bucket)
+            .service(apis::put_handler::handle_put)
+            // .service(apis::create_bucket::create_bucket)
             .service(apis::list_buckets::list_buckets)
             .default_service(web::route().to(not_found))
             .app_data(web::Data::new(AppState {
                 working_folder: config.working_folder.clone(),
             }))
+            .wrap(middleware::Logger::default())
     });
 
     let server_url = format!("{}:{}", config.server_url, config.server_port);

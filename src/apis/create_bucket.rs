@@ -1,4 +1,4 @@
-use actix_web::{error, put, web, Error, HttpRequest, HttpResponse};
+use actix_web::{error, put, web, Error, HttpResponse};
 use serde::{Deserialize, Serialize};
 
 #[derive(Deserialize, Serialize, Debug)]
@@ -23,12 +23,10 @@ pub struct BucketError {
     pub host_id: String,
 }
 
-#[put("/{bucket_name}")]
 pub async fn create_bucket(
-    bucket_name: web::Path<String>,
+    bucket_name: String,
     data: web::Data<crate::AppState>,
 ) -> Result<HttpResponse, Error> {
-    let bucket_name = bucket_name.into_inner();
     let working_folder = &data.working_folder;
 
     let bucket_path = format!("{}/{}", working_folder, bucket_name);

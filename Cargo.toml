@@ -8,7 +8,9 @@ authors = ["Sardorbek Pulatov <sardo@hey.com>"]
 
 [dependencies]
 actix-web = "4.3"
-clap = { version = "4.2.7", features = ["derive"] }
+actix-router = "0.5"
+clap = { version = "4.2", features = ["derive"] }
+futures = "0.3"
 tracing = "0.1"
 tracing-subscriber = "0.3"
 serde = { version = "1.0", features = ["derive"] }
