@@ -3,6 +3,7 @@ use actix_web::{get, web, Error, HttpResponse};
 use quick_xml::se::to_string;
 use serde::{Deserialize, Serialize};
 use crate::utils::get_timestamp;
+use tracing::error;
 
 #[derive(Serialize, Deserialize, PartialEq, Debug, Clone)]
 #[serde(rename_all = "PascalCase")]
@@ -64,7 +65,7 @@ pub async fn list_buckets(data: web::Data<crate::AppState>) -> Result<HttpRespon
     let list_result = match list_result {
         Ok(result) => result,
         Err(err) => {
-            println!("Error: {:?}", err);
+            error!("Error: {:?}", err);
             return Ok(HttpResponse::InternalServerError().body("Error"));
         }
     };
