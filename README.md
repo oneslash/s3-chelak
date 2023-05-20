@@ -127,7 +127,7 @@ $ ./s3-chelak --server-url "my_custom_url" --server-port "8080" --working-folder
 | PutBucketTagging                            |        :x:         |
 | PutBucketVersioning                         |        :x:         |
 | PutBucketWebsite                            |        :x:         |
-| PutObject                                   |        :x:         |
+| PutObject                                   | :white_check_mark: |
 | PutObjectAcl                                |        :x:         |
 | PutObjectLegalHold                          |        :x:         |
 | PutObjectLockConfiguration                  |        :x:         |
