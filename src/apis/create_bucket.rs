@@ -24,7 +24,7 @@ pub struct BucketError {
 }
 
 #[put("/{bucket_name}")]
-async fn create_bucket(
+pub async fn create_bucket(
     bucket_name: web::Path<String>,
     data: web::Data<crate::AppState>,
 ) -> Result<HttpResponse, Error> {
@@ -35,9 +35,7 @@ async fn create_bucket(
     let bucket_path = std::path::Path::new(&bucket_path);
 
     match std::fs::create_dir(bucket_path) {
-        Ok(_) => {
-            Ok(HttpResponse::Ok().body(format!("Bucket {} created successfully.", bucket_name)))
-        }
+        Ok(_) => Ok(HttpResponse::Ok().finish()),
         Err(e) => {
             tracing::error!("Cannot create bucket: {:?}", e);
             match e.kind() {

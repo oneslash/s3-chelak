@@ -15,8 +15,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Build
-      run: cargo build --verbose
-    - name: Run tests
-      run: cargo test --verbose
+      - uses: actions/checkout@v3
+      - name: Build
+        run: cargo build --verbose
+      - name: Run tests
+        run: |
+          mkdir ~/.aws/
+          echo "[default]" >> ~/.aws/credentials
+          echo "aws_access_key_id = test" >> ~/.aws/credentials
+          echo "aws_secret_access_key = test" >> ~/.aws/credentials
+          echo "[default]" >> ~/.aws/config
+          echo "region = us-east-1" >> ~/.aws/config
+          sudo apt-get install -y awscli
+          cargo test --verbose
+          RUNNER_TRACKING_ID="" && (nohup cargo run --verbose -- --working-folder /tmp/&)
+          sleep 10
+          aws --endpoint-url http://localhost:9090 s3 mb s3://sardo
+          aws --endpoint-url http://localhost:9090 s3 ls
+        

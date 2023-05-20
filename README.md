@@ -1,5 +1,7 @@
 # 🪣 S3 Chelak
 
+[![Rust](https://github.com/oneslash/s3-chelak/actions/workflows/rust.yml/badge.svg)](https://github.com/oneslash/s3-chelak/actions/workflows/rust.yml)
+
 ## Description
 
 **S3 Chelak** is a local development tool that emulates the AWS S3 API's interface. This allows you to test your S3 integrations without connecting to AWS, which is useful for offline development and testing. It's designed to behave as much as possible like AWS S3, with the ability to store and retrieve objects, among other functions.
@@ -33,7 +35,7 @@ Parameters:
 - `working_folder` (Default: `"/tmp/s3-server"`): This is the directory where the server will store all the data. If you wish to have the data stored in a different location, you can modify this value.
 
 ```bash
-$ ./s3-chelak --server_url "my_custom_url" --server_port "8080" --working_folder "/path/to/my/folder"
+$ ./s3-chelak --server-url "my_custom_url" --server-port "8080" --working-folder "/path/to/my/folder"
 ```
 
 ## API's implemented
@@ -113,6 +115,30 @@ $ ./s3-chelak --server_url "my_custom_url" --server_port "8080" --working_folder
 | PutBucketInventoryConfiguration             |        :x:         |
 | PutBucketLifecycle                          |        :x:         |
 | PutBucketLifecycleConfiguration             |        :x:         |
+| PutBucketLifecycleConfiguration             |        :x:         |
+| PutBucketLogging                            |        :x:         |
+| PutBucketMetricsConfiguration               |        :x:         |
+| PutBucketNotification                       |        :x:         |
+| PutBucketNotificationConfiguration          |        :x:         |
+| PutBucketOwnershipControls                  |        :x:         |
+| PutBucketPolicy                             |        :x:         |
+| PutBucketReplication                        |        :x:         |
+| PutBucketRequestPayment                     |        :x:         |
+| PutBucketTagging                            |        :x:         |
+| PutBucketVersioning                         |        :x:         |
+| PutBucketWebsite                            |        :x:         |
+| PutObject                                   |        :x:         |
+| PutObjectAcl                                |        :x:         |
+| PutObjectLegalHold                          |        :x:         |
+| PutObjectLockConfiguration                  |        :x:         |
+| PutObjectRetention                          |        :x:         |
+| PutObjectTagging                            |        :x:         |
+| PutPublicAccessBlock                        |        :x:         |
+| RestoreObject                               |        :x:         |
+| SelectObjectContent                         |        :x:         |
+| UploadPart                                  |        :x:         |
+| UploadPartCopy                              |        :x:         |
+| WriteGetObjectResponse                      |        :x:         |
 
 ## License
 
