@@ -1,4 +1,4 @@
-use actix_router::{Path, Resource, ResourceDef, Url};
+use actix_router::{Path, ResourceDef, Url};
 
 use crate::apis::create_bucket::create_bucket;
 use crate::apis::put_object::put_object;
@@ -9,7 +9,7 @@ pub async fn handle_put(
     _: web::Path<String>,
     req: HttpRequest,
     data: web::Data<crate::AppState>,
-    mut payload: Option<web::Payload>,
+    payload: Option<web::Payload>,
 ) -> Result<HttpResponse, Error> {
     let mut path = Path::new(Url::new(req.uri().clone()));
 

@@ -1,4 +1,4 @@
-use actix_web::{error, head, web, Error, FromRequest, HttpRequest, HttpResponse};
+use actix_web::{error, head, web, Error, HttpRequest, HttpResponse};
 use std::fs::File;
 use std::io::Read;
 

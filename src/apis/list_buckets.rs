@@ -1,6 +1,6 @@
 use crate::utils::get_timestamp;
 use actix_web::http::header::ContentType;
-use actix_web::{get, web, Error, HttpResponse};
+use actix_web::{web, Error, HttpResponse};
 use quick_xml::se::to_string;
 use serde::{Deserialize, Serialize};
 use tracing::error;
