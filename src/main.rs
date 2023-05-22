@@ -44,8 +44,8 @@ async fn main() -> std::io::Result<()> {
         App::new()
             .wrap(middleware::Logger::default())
             .service(apis::put_handler::handle_put)
-            // .service(apis::create_bucket::create_bucket)
-            .service(apis::list_buckets::list_buckets)
+            .service(apis::get_handler::handle_get)
+            .service(apis::get_object::get_object_head)
             .default_service(web::route().to(not_found))
             .app_data(web::Data::new(AppState {
                 working_folder: config.working_folder.clone(),
