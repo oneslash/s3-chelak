@@ -86,7 +86,7 @@ $ ./s3-chelak --server-url "my_custom_url" --server-port "8080" --working-folder
 | GetBucketTagging                            |        :x:         |
 | GetBucketVersioning                         |        :x:         |
 | GetBucketWebsite                            |        :x:         |
-| GetObject                                   |        :x:         |
+| GetObject                                   | :white_check_mark: |
 | GetObjectAcl                                |        :x:         |
 | GetObjectLegalHold                          |        :x:         |
 | GetObjectLockConfiguration                  |        :x:         |
@@ -95,7 +95,7 @@ $ ./s3-chelak --server-url "my_custom_url" --server-port "8080" --working-folder
 | GetObjectTorrent                            |        :x:         |
 | GetPublicAccessBlock                        |        :x:         |
 | HeadBucket                                  |        :x:         |
-| HeadObject                                  |        :x:         |
+| HeadObject                                  | :white_check_mark: |
 | ListBucketAnalyticsConfigurations           |        :x:         |
 | ListBucketIntelligentTieringConfigurations  |        :x:         |
 | ListBucketInventoryConfigurations           |        :x:         |
