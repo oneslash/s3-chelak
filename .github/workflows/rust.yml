@@ -33,4 +33,5 @@ jobs:
           aws --endpoint-url http://localhost:9090 s3 mb s3://sardo
           aws --endpoint-url http://localhost:9090 s3 ls
           aws --endpoint-url http://localhost:9090 s3 cp ./Cargo.toml s3://sardo
+          aws --endpoint-url http://localhost:9090 s3 cp s3://sardo/Cargo.toml /tmp/Cargo.toml
         

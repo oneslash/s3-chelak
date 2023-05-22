@@ -16,3 +16,4 @@ tracing-subscriber = "0.3"
 serde = { version = "1.0", features = ["derive"] }
 chrono = "0.4"
 quick-xml = { version = "0.28", features = ["serialize"] }
+mime_guess = "2.0"

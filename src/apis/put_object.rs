@@ -1,4 +1,4 @@
-use actix_web::{put, web, Error, FromRequest, HttpRequest, HttpResponse};
+use actix_web::{web, Error, HttpResponse};
 use futures::StreamExt;
 use std::fs::File;
 use std::io::Write;

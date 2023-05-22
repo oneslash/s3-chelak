@@ -1,6 +1,6 @@
 use crate::utils::get_timestamp;
 use actix_web::http::header::ContentType;
-use actix_web::{get, web, Error, HttpResponse};
+use actix_web::{web, Error, HttpResponse};
 use quick_xml::se::to_string;
 use serde::{Deserialize, Serialize};
 use tracing::error;
@@ -27,7 +27,6 @@ pub struct Bucket {
 }
 
 /// List Buckets (GET Bucket) (https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html)
-#[get("/")]
 pub async fn list_buckets(data: web::Data<crate::AppState>) -> Result<HttpResponse, Error> {
     let working_folder = &data.working_folder;
     let entities = std::fs::read_dir(working_folder)?;
